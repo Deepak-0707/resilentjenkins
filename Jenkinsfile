@@ -22,7 +22,7 @@ pipeline{
         }
         stage("building Image"){
             steps{
-                bat "%DOCKER% build -t app ."
+                bat "%DOCKER% build -t app:%IMAGE_TAG% ."
             }
         }
         stage("Simualated Test Phase"){
@@ -40,7 +40,7 @@ pipeline{
         stage("Push Image with Retry"){
             steps{
                 retry(2){
-                    bat "%DOCKER% tag %IMAGE_TAG% deepakm06/app:latest"
+                    bat "%DOCKER% tag %IMAGE_TAG% deepakm06/app:%IMAGE_TAG%"
                 }
             }
         }
