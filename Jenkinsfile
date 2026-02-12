@@ -40,7 +40,7 @@ pipeline{
         stage("Push Image with Retry"){
             steps{
                 retry(2){
-                    bat "%DOCKER% tag %env.IMAGE_NAME% deepakm06/app:latest"
+                    bat "%DOCKER% tag ${IMAGE_NAME} deepakm06/app:latest"
                 }
             }
         }
