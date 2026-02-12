@@ -6,7 +6,7 @@ pipeline{
     }
     environment{
         DOCKER='"C:/Program Files/Docker/Docker/resources/bin/docker.exe"'
-        IMAGE_TAG=${env.BUILD_NUMBER}
+        IMAGE_TAG="${env.BUILD_NUMBER}"
     }
     options{
         timestamps()
