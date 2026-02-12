@@ -15,7 +15,7 @@ pipeline{
     stages{
         stage("Cleaning Workspace"){
             steps{
-                cleanWS()
+                cleanWs()
             }
         }
         stage("building Image"){
@@ -81,7 +81,7 @@ pipeline{
     }
     post{
         always{
-            cleanWS()
+            cleanWs()
 
         }
         success{
