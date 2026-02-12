@@ -5,7 +5,7 @@ pipeline{
         booleanParam(name:"SIMULATE_FAILURE",defaultValue:false)
     }
     environment{
-        DOCKER='"C:/Program Files/Docker/Docker/resources/bin/docker.exe'
+        DOCKER='"C:/Program Files/Docker/Docker/resources/bin/docker.exe"'
         IMAGE_TAG="app:${env.BUILD_NUMBER}"
     }
     options{
