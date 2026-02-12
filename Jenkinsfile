@@ -8,7 +8,7 @@ pipeline{
         DOCKER='"C:/Program Files/Docker/Docker/resources/bin/docker.exe'
         IMAGE_TAG="app:${env.BUILD_NUMBER}"
     }
-    option{
+    options{
         timestamps()
         disableConcurrentBuilds()
     }
