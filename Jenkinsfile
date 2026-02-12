@@ -52,7 +52,7 @@ pipeline{
         }
         stage("Deploy"){
             steps{
-                timeout(time:10,units:"SECONDS"){
+                timeout(time:10,unit:"SECONDS"){
                     echo "Deploying to ${params.ENV}"
                     sleep 3
                 }
