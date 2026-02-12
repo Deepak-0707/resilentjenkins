@@ -6,7 +6,7 @@ pipeline{
     }
     environment{
         DOCKER='"C:/Program Files/Docker/Docker/resources/bin/docker.exe"'
-        IMAGE_TAG="app:${env.BUILD_NUMBER}"
+        IMAGE_TAG=${env.BUILD_NUMBER}
     }
     options{
         timestamps()
@@ -40,7 +40,7 @@ pipeline{
         stage("Push Image with Retry"){
             steps{
                 retry(2){
-                    bat "%DOCKER% tag %IMAGE_TAG% deepakm06/app:%IMAGE_TAG%"
+                    bat "%DOCKER% tag app:%IMAGE_TAG% deepakm06/app:%IMAGE_TAG%"
                 }
             }
         }
