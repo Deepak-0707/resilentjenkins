@@ -11,11 +11,13 @@ pipeline{
     options{
         timestamps()
         disableConcurrentBuilds()
+        skipDefaultCheckout(true)
     }
     stages{
-        stage("Cleaning Workspace"){
+        stage("Cleaning Workspace and Pulling Code"){
             steps{
                 cleanWs()
+                checkout scm
             }
         }
         stage("building Image"){
